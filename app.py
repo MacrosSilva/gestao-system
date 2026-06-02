@@ -1,8 +1,14 @@
 import streamlit as st
 from database.connection import criar_tabelas
+from modules.produtos import cadastrar_produto, listar_produtos
 
-# Cria as tabelas no banco ao iniciar
 criar_tabelas()
 
 st.title("🏪 Sistema de Gestão")
-st.success("Banco de dados configurado com sucesso!")
+pagina = st.sidebar.selectbox("Menu", ["Cadastro de Produtos", "Produtos Cadastrados"])
+                                       
+if pagina == "Cadastro de Produtos":
+    cadastrar_produto()
+elif pagina == "Produtos Cadastrados":
+    listar_produtos()
+    
