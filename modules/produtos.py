@@ -138,3 +138,4 @@ def listar_produtos():
                 if col_cancelar.button("✖ Cancelar", key=f"cancelar_excl_{p.id}", use_container_width=True):
                     st.session_state.confirmar_exclusao_id = None
                     st.rerun()
+
